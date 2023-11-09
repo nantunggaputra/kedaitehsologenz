@@ -269,7 +269,7 @@ body {
         box-shadow: 1.3px 1.3px 3.9px var(--tea);
         display: block;
         margin: 1.5rem;
-        padding top: 0.5rem;
+        padding-top: 0.5rem;
         font-size: 1.6rem;
     }
     .navbar .navbar-nav a::after {
