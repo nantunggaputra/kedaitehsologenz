@@ -171,7 +171,8 @@ body {
     padding: 8.4rem 7% 1.4rem;
 }
 
-.about h2 {
+.about h2,
+.menu h2 {
     text-align: center;
     font-size: 1.8rem;
     margin-bottom: 3rem;
@@ -179,7 +180,8 @@ body {
     box-shadow: 1.3px 1.3px 3.9px var(--tea);
 }
 
-.about h2 span {
+.about h2 span,
+.menu h2 span {
     color: var(--primary);
 }
 
