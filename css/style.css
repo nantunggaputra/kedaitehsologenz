@@ -1,6 +1,9 @@
 :root {
-    --primary: rgb(38, 122, 66); /* declare_primary_color_variable */
-    --bg: rgb(249, 246, 197); /* declare_background_color_variable */
+    --primary: rgb(36, 161, 78); /* declare_primary_color_variable */
+    --bg: rgb(253,214,100); /* declare_background_color_variable */
+    --teatransparent: rgba(198, 67, 27, 0.678);
+    --teatail: rgb(198, 67, 27);
+    --tea: rgb(144, 14, 6);
 }
 
 * {
@@ -16,16 +19,18 @@ body {
     font-family: 'Poppins', Courier, monospace; /* call_the_special_font*/
     background-color: var(--bg);
     color: rgb(255, 255, 255);
+    /* min-height: 2000px; */
 }
 
 /* Navbar */
+
 .navbar {
     display: flex; /* make_navigation_bar_responsive_layout */
     justify-content: space-between;
     align-items: center;
     padding: 1.4rem 5%; /* adjust_navigation_font_size */
-    background-color: rgba(198, 67, 27, 0.678);
-    border-bottom: 1px solid rgb(198, 67, 27);
+    background-color: var(--teatransparent);
+    box-shadow: 1.3px 1.3px 3.9px var(--tea);
     position: fixed; /* fix_navigation_position */
     top: 0;
     left: 0;
@@ -47,11 +52,12 @@ body {
 .navbar .navbar-nav a {
     color: rgb(255, 255, 255);
     display: inline-block;
+    padding-top: 0.5rem;
     font-size: 1.6rem;
 }
 
 .navbar .navbar-nav a:hover {
-    color: rgb(144, 14, 6); /* call_navigation_font_color_animation */
+    color: var(--bg); /* call_navigation_font_color_animation */
 }
 
 .navbar .navbar-nav a::after {
@@ -73,15 +79,89 @@ body {
 }
 
 .navbar .navbar-extra a:hover {
-    color: rgb(144, 14, 6); /* call_navigation_logo_animation */
+    color: var(--bg); /* call_navigation_logo_animation */
 }
 
 #edge-menu {
     display: none; /* manipulate_edge-menu */
 }
 
+/* Hero Section */
 
+.hero {
+    min-height: 100vh; /* make_background_full_cover */
+    display: flex; /* make_section_position */
+    align-items: center; /* make_section_position */
+    background-image: url('../img/header-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
 
+.hero::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(0deg, rgb(253,214,100, 1) 4%, rgb(253,214,100, 0) 30%);
+    bottom: 0;
+}
+
+.hero .content {
+    padding: 1.4rem 7%;
+    max-width: 60rem;
+}
+
+.hero .content h1 {
+    font-size: 2.5em;
+    color: rgb(255, 255, 255);
+    text-shadow: 1.3px 1.3px 3.9px rgb(0, 0, 0);
+    line-height: 1.5;
+}
+
+.hero .content span {
+    color: var(--teatail);
+}
+
+.hero .content p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    line-height: 1.4;
+    font-weight: 300;
+    text-shadow: 1.3px 1.3px 3.9px rgb(0, 0, 0);
+    mix-blend-mode: hard-light;
+}
+
+.hero .content .cta {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    color: rgb(255, 255, 255);
+    font-size: 1.6rem;
+    font-weight: 300;
+    background-color: var(--teatransparent);
+    border-radius: 0.8rem;
+    box-shadow: 1.3px 1.3px 3.9px var(--tea);
+}
+
+.hero .content a:hover {
+    color: var(--bg); /* call_navigation_font_color_animation */
+}
+
+.hero .content a::after {
+    content: '';
+    display: block;
+    padding-top: 0.5rem;
+    border-top: 0.1rem solid rgb(255, 255, 255); /* create_navigation_font_decoration_animation */
+    transform: scaleX(0);
+    transition: 0.1s ease-in;
+}
+
+.hero .content a:hover::after {
+    transform: scaleX(1); /* call_navigation_font_animation */
+}
 
 
 
@@ -120,8 +200,9 @@ body {
         right: 0; /* manipulate_edge-menu */
     }
     .navbar .navbar-nav a {
-        background-color: rgba(198, 67, 27, 0.678); /* fix_edge-menu_animation */
+        background-color: var(--teatransparent); /* fix_edge-menu_animation */
         border-radius: 0.8rem;
+        box-shadow: 1.3px 1.3px 3.9px var(--tea);
         display: block;
         margin: 1.5rem;
         padding: 0.5rem;
