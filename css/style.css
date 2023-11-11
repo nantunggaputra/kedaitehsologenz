@@ -119,7 +119,7 @@ body {
 .hero .content h1 {
     font-size: 2.5em;
     color: rgb(255, 255, 255);
-    text-shadow: 1.3px 1.3px 3.9px rgb(0, 0, 0);
+    text-shadow: 6px 6px 9px rgb(0, 0, 0);
     line-height: 1.5;
 }
 
@@ -132,8 +132,7 @@ body {
     margin-top: 1rem;
     line-height: 1.4;
     font-weight: 300;
-    text-shadow: 1.3px 1.3px 3.9px rgb(0, 0, 0);
-    mix-blend-mode: hard-light;
+    text-shadow: 6px 6px 9px rgb(0, 0, 0);
 }
 
 .hero .content .cta {
@@ -171,8 +170,7 @@ body {
     padding: 8.4rem 7% 1.4rem;
 }
 
-.about h2,
-.menu h2 {
+.about h2 {
     text-align: center;
     font-size: 1.8rem;
     margin-bottom: 3rem;
@@ -180,8 +178,7 @@ body {
     box-shadow: 1.3px 1.3px 3.9px var(--tea);
 }
 
-.about h2 span,
-.menu h2 span {
+.about h2 span {
     color: var(--primary);
 }
 
@@ -216,7 +213,65 @@ body {
     line-height: 1.6;
 }
 
+/* Menu_Section */
 
+.menu {
+    padding: 8.4rem 7% 1.4rem;
+}
+
+.menu h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+    background-color: var(--teatransparent);
+    box-shadow: 1.3px 1.3px 3.9px var(--tea);
+}
+
+.menu h2 span {
+    color: var(--primary);
+}
+
+.menu-all {
+    display: flex;
+}
+
+.menu-all {
+    flex: 1 1 65rem;
+    padding: 0 1rem;
+}
+
+.menu h3 {
+    color: rgb(34, 35, 36);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem
+}
+
+.menu-all {
+    margin-bottom: 0.8rem;
+    color: rgb(34, 35, 36);
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.menu .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+    justify-content: center;
+}
+
+.menu .row .menu-card {
+    text-align: center;
+    color: rgb(34, 35, 36);
+}
+
+.menu .row .menu-card img {
+    width: 240px;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    }
 
 
 
