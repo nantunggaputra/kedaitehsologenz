@@ -19,7 +19,7 @@ body {
   font-family: "Poppins", Calibri, monospace; /* call_the_special_font*/
   background-color: var(--bg);
   color: rgb(255, 255, 255);
-  min-height: 2000px;
+  min-height: 4000px;
 }
 
 /* Navbar */
@@ -151,21 +151,21 @@ body {
   box-shadow: 1.3px 1.3px 3.9px var(--tea);
 }
 
-.hero .content a:hover {
-  color: var(--bg); /* call_navigation_font_color_animation */
+.hero .content .cta:hover {
+  color: var(--bg); /* call_cta_font_color_animation */
 }
 
-.hero .content a::after {
+.hero .content .cta::after {
   content: "";
   display: block;
   padding-top: 0.5rem;
-  border-top: 0.1rem solid rgb(255, 255, 255); /* create_navigation_font_decoration_animation */
+  border-top: 0.1rem solid rgb(255, 255, 255); /* create_cta_font_decoration_animation */
   transform: scaleX(0);
   transition: 0.1s ease-in;
 }
 
 .hero .content a:hover::after {
-  transform: scaleX(0.6); /* call_navigation_font_animation */
+  transform: scaleX(0.6); /* call_cta_font_animation */
 }
 
 /* About_Section */
@@ -213,7 +213,7 @@ body {
   margin-bottom: 0.8rem;
   color: rgb(2, 87, 57);
   font-size: 1.2rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.6;
 }
 
@@ -255,14 +255,14 @@ body {
   color: rgb(42, 42, 42);
   text-align: center;
   font-size: 1.2rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.6;
 }
 
 .menu .row {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 2.5rem;
+  margin-top: 1rem;
   justify-content: center;
 }
 
@@ -274,10 +274,49 @@ body {
 }
 
 .menu .row .menu-card img {
-    width: 200px;
-    max-width: 100%;
-    border-radius: 50%;
-    margin-bottom: 1.5rem;
+  width: 200px;
+  max-width: 100%;
+  border-radius: 50%;
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.menu .row .menu-card-description {
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.menu .row .menu-card-description span {
+  color: var(--bg);
+  background-color: rgb(152, 13, 136);
+}
+
+.menu .row .menu-card-price {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 0.5rem 2rem 0 2rem;
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+  font-weight: 300;
+  background-color: rgb(42, 42, 42);
+  border-radius: 0.8rem;
+}
+
+.menu .row .menu-card-price:hover {
+  color: var(--bg); /* call_price_font_color_animation */
+}
+
+.menu .row .menu-card-price::after {
+  content: "";
+  display: block;
+  padding-top: 0.5rem;
+  border-top: 0.1rem solid rgb(255, 255, 255); /* create_price_font_decoration_animation */
+  transform: scaleX(0);
+  transition: 0.1s ease-in;
+}
+
+.menu .row .menu-card-price:hover::after {
+  transform: scaleX(1); /* call_price_font_animation */
 }
 
 /* Media_Queries */
