@@ -15,11 +15,14 @@
   text-decoration: none;
 }
 
+html {
+  scroll-behavior: smooth; /* make_smooth_when_scrolling */
+}
+
 body {
-  font-family: "Poppins", Calibri, monospace; /* call_the_special_font*/
+  font-family: "Poppins", Calibri, monospace; /* call_the_special_font */
   background-color: var(--bg);
   color: rgb(255, 255, 255);
-  min-height: 4000px;
 }
 
 /* Navbar */
@@ -373,10 +376,11 @@ body {
   border-radius: 0.8rem;
 }
 
-.contact .row form .input-group input {
+.contact .row form .input-group input, .contact .row form .input-group textarea {
   width: 100%;
   padding: 0.5rem 2rem;
   color: rgb(255, 255, 255);
+  font-family: "Poppins", Calibri, monospace;
   font-size: 1.2rem;
   background: none;
 }
@@ -393,11 +397,56 @@ body {
   cursor: pointer;
 }
 
+/* Footer_Section */
+
+footer {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 7px 7px 13px 13px rgba(255, 255, 255, 0.95);
+  text-align: center;
+  margin-top: 14rem;
+  padding: 1rem 0;
+}
+
+footer .social {
+  padding: 1rem 0;
+}
+
+footer .social a {
+  margin: 1rem;
+  color: var(--primary);
+}
+
+footer .social a:hover {
+  color: rgb(42, 42, 42);
+}
+
+footer .links a, footer .links p {
+  display: inline;
+  margin: 3rem 0.5rem;
+  color: var(--primary);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+footer .credit a, footer .credit p {
+  margin: 4rem 0.5rem 1rem 0.5rem;
+  color: var(--primary);
+  font-size: 0.7rem;
+  font-weight: 300;
+}
+
+footer .credit a:hover {
+  color: var(--primary);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
 /* !WARNING Media_Queries */
 
 /* ?QUESTION Check again is it responsive? */
 
 /* TODO Laptop */
+
 @media (max-width: 1366px) {
   html {
     font-size: 75%;
@@ -405,6 +454,7 @@ body {
 }
 
 /* TODO Tablet */
+
 @media (max-width: 758px) {
   html {
     font-size: 62.5%;
@@ -437,7 +487,7 @@ body {
     transform-origin: 0 0; /* fix_edge-menu_animation */
   }
   .navbar .navbar-nav a:hover:after {
-    transform: scaleX(0.46); /* fix_edge-menu_animation */
+    transform: scaleX(0.44); /* fix_edge-menu_animation */
   }
   .about .row {
     flex-wrap: wrap;
@@ -463,6 +513,7 @@ body {
 }
 
 /* TODO Mobile */
+
 @media (max-width: 450px) {
   html {
     font-size: 55%;
