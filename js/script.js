@@ -29,36 +29,6 @@ document.addEventListener("click", function (e) {
 });
 
 // custom_search_engine_API
-function search() {
-  const searchInput = document.getElementById("search-input").value;
-
-  // Memanggil endpoint REST API Go
-  function search() {
-    const searchInput = document.getElementById("search-input").value;
-
-    // Memanggil endpoint REST API Go di GitHub Pages
-    fetch(
-      `https://nantunggaputra.github.io/kedaitehsologenz/search?q=${encodeURIComponent(
-        searchInput
-      )}`
-    )
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.text();
-      })
-      .then((data) => {
-        // Hasil redirect tidak dapat dilihat di console karena ini adalah redirect HTTP
-        console.log(
-          "Redirected successfully, check your browser's address bar for Google search results."
-        );
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  }
-}
 
 // input_name
 const inputElement = document.getElementById("name");

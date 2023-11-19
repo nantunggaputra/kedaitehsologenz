@@ -1,0 +1,7 @@
+{
+  "go.toolsEnvVars": {
+    "GOPATH": "${workspaceFolder}"
+  },
+  "go.useLanguageServer": true,
+  "go.inferGopath": true
+}
