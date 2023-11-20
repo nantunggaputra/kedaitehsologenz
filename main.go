@@ -35,6 +35,8 @@ func getEnvVar(key string) string {
 }
 
 func searchHandler(w http.ResponseWriter, r *http.Request) {
+	log.Println("Received request:", r.URL.Path)
+
 	query := r.URL.Query().Get("query")
 
 	if query == "" {

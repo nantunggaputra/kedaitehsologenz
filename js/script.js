@@ -8,11 +8,12 @@ document.querySelector("#edge-menu").onclick = (e) => {
 };
 
 // toggle_class_active_search-container
-const navbarSearch = document.querySelector("#search-container");
-const navbarSearchBox = document.querySelector("#search-input");
+const navbarSearch = document.querySelector(".container");
+const navbarSearchBox = document.querySelector("#search-form");
+const navbarSearchInput = document.querySelector("#query");
 document.querySelector("#search").onclick = (e) => {
   navbarSearch.classList.toggle("active");
-  navbarSearchBox.focus();
+  navbarSearchInput.focus();
   e.preventDefault();
 };
 
@@ -29,6 +30,61 @@ document.addEventListener("click", function (e) {
 });
 
 // custom_search_engine_API
+document.addEventListener("DOMContentLoaded", function () {
+  // Fungsi untuk mengirim permintaan ke server dan menangani respons
+  function sendSearchRequest(query) {
+    // Ganti dengan URL server Go Anda
+    /*
+    const apiUrl = 'https://contoh-my-go-server.herokuapp.com/api/search?query=' + encodeURIComponent(query);
+    */
+    const apiUrl =
+      "http://localhost:8080/api/search?query=" + encodeURIComponent(query);
+
+    // Menggunakan Fetch API untuk mengirim permintaan ke server
+    fetch(apiUrl)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        // Menangani data respons dari server
+        displaySearchResults(data);
+      })
+      .catch((error) => {
+        // Menangani kesalahan yang mungkin terjadi selama permintaan
+        console.error("Error fetching data:", error);
+      });
+  }
+
+  // Fungsi untuk menampilkan hasil pencarian di halaman web
+  function displaySearchResults(results) {
+    const resultsContainer = document.getElementById("results");
+    resultsContainer.innerHTML = "";
+
+    // Membuat elemen HTML untuk setiap hasil pencarian
+    results.forEach((result) => {
+      const resultElement = document.createElement("div");
+      resultElement.innerHTML = `<a href="${result.Link}" target="_blank">${result.Title}
+
+</a>`;
+      resultsContainer.appendChild(resultElement);
+    });
+  }
+
+  // Menangani formulir pencarian saat disubmit
+  const searchForm = document.getElementById("search-form");
+  searchForm.addEventListener("submit", function (event) {
+    event.preventDefault(); // Mencegah formulir untuk melakukan submit biasa
+    const queryInput = document.getElementById("query");
+    const query = queryInput.value.trim();
+
+    if (query !== "") {
+      sendSearchRequest(query);
+    }
+  });
+});
 
 // input_name
 const inputElement = document.getElementById("name");
