@@ -102,7 +102,6 @@ body {
   border-radius: 0.8rem;
   box-shadow: 1.3px 1.3px 3.9px var(--tea);
   height: 3.66rem;
-  width: 33rem;
   display: flex;
   transform: scaleY(0);
   transform-origin: top;
@@ -126,7 +125,7 @@ body {
 }
 
 .navbar .container button {
-  margin-left: 1rem;
+  margin-right: 0.5rem;
   cursor: pointer;
   color: rgb(255, 255, 255);
   background-color: transparent;
@@ -263,11 +262,11 @@ body {
 
 /* Menu_Section */
 
-.menu {
+.menu, .products {
   padding: 12rem 7% 1.4rem;
 }
 
-.menu h2 {
+.menu h2, .products h2 {
   text-align: center;
   font-size: 1.8rem;
   margin-bottom: 3rem;
@@ -275,11 +274,11 @@ body {
   box-shadow: 1.3px 1.3px 3.9px var(--tea);
 }
 
-.menu h2 span {
+.menu h2 span, .products h2 span {
   color: var(--primary);
 }
 
-.menu-all {
+.menu-all, .products-all {
   display: flex;
   flex: 1 1 65rem;
   padding: 0 1rem;
@@ -356,6 +355,44 @@ body {
 
 .menu .row .menu-card-price:hover::after {
   transform: scaleX(1); /* call_price_font_animation */
+}
+
+/* Products_Section */
+
+.products .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+
+.products .product-card {
+  text-align: center;
+  border: 1px solid rgb(42, 42, 42);
+  padding: 2rem;
+}
+
+.products .product-icon {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.products .product-icon a {
+  width: 4rem;
+  height: 4rem;
+  color: rgb(255, 255, 255);
+  margin: 0.3rem;
+  border: 1px solid rgb(42, 42, 42);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.products .product-icon a:hover {
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
 }
 
 /* Contact_Section */

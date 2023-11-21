@@ -3,5 +3,5 @@
     "GOPATH": "${workspaceFolder}"
   },
   "go.useLanguageServer": true,
-  "go.inferGopath": false
+  "go.inferGopath": true
 }

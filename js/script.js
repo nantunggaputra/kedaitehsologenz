@@ -31,59 +31,77 @@ document.addEventListener("click", function (e) {
 
 // custom_search_engine_API
 document.addEventListener("DOMContentLoaded", function () {
-  // Fungsi untuk mengirim permintaan ke server dan menangani respons
-  function sendSearchRequest(query) {
-    // Ganti dengan URL server Go Anda
-    /*
-    const apiUrl = 'https://contoh-my-go-server.herokuapp.com/api/search?query=' + encodeURIComponent(query);
-    */
-    const apiUrl =
-      "http://localhost:8080/api/search?query=" + encodeURIComponent(query);
-
-    // Menggunakan Fetch API untuk mengirim permintaan ke server
-    fetch(apiUrl)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        // Menangani data respons dari server
-        displaySearchResults(data);
-      })
-      .catch((error) => {
-        // Menangani kesalahan yang mungkin terjadi selama permintaan
-        console.error("Error fetching data:", error);
-      });
-  }
-
-  // Fungsi untuk menampilkan hasil pencarian di halaman web
-  function displaySearchResults(results) {
-    const resultsContainer = document.getElementById("results");
-    resultsContainer.innerHTML = "";
-
-    // Membuat elemen HTML untuk setiap hasil pencarian
-    results.forEach((result) => {
-      const resultElement = document.createElement("div");
-      resultElement.innerHTML = `<a href="${result.Link}" target="_blank">${result.Title}
-
-</a>`;
-      resultsContainer.appendChild(resultElement);
-    });
-  }
-
-  // Menangani formulir pencarian saat disubmit
   const searchForm = document.getElementById("search-form");
-  searchForm.addEventListener("submit", function (event) {
-    event.preventDefault(); // Mencegah formulir untuk melakukan submit biasa
-    const queryInput = document.getElementById("query");
-    const query = queryInput.value.trim();
 
-    if (query !== "") {
-      sendSearchRequest(query);
+  searchForm.addEventListener("submit", function (event) {
+    event.preventDefault(); // Mencegah form dari pengiriman default
+
+    const query = document.getElementById("query").value;
+    if (!query) {
+      alert("Please enter a search query");
+      return;
     }
+
+    performSearch(query);
   });
+});
+
+function performSearch(query) {
+  fetch(`http://localhost:8080/api/search?query=${query}`)
+    .then((response) => response.json())
+    .then((data) => displayResults(data))
+    .catch((error) => console.error("Error fetching search results:", error));
+}
+
+function displayResults(results) {
+  const resultsContainer = document.getElementById("results");
+  resultsContainer.innerHTML = "";
+
+  if (results.length === 0) {
+    resultsContainer.innerHTML = "No results found.";
+    return;
+  }
+
+  const ul = document.createElement("ul");
+  results.forEach((result) => {
+    const li = document.createElement("li");
+    li.textContent = `${result.Title} - ${result.Link}`;
+    ul.appendChild(li);
+  });
+
+  resultsContainer.appendChild(ul);
+}
+
+// Fungsi untuk menampilkan hasil pencarian di halaman web
+function displayResults(results) {
+  const resultsContainer = document.getElementById("search-results");
+  resultsContainer.innerHTML = "";
+
+  if (results.length === 0) {
+    resultsContainer.innerHTML = "No results found.";
+    return;
+  }
+
+  const ul = document.createElement("ul");
+  results.forEach((result) => {
+    const li = document.createElement("li");
+    li.textContent = `${result.Title} - ${result.Link}`;
+    ul.appendChild(li);
+  });
+
+  resultsContainer.appendChild(ul);
+}
+
+// Menangani formulir pencarian saat disubmit
+const searchForm = document.getElementById("search-form");
+searchForm.addEventListener("submit", function (event) {
+  event.preventDefault(); // Mencegah formulir untuk melakukan submit biasa
+  const queryInput = document.getElementById("query");
+  const query = queryInput.value.trim();
+
+  if (query !== "") {
+    sendSearchRequest(query);
+  }
 });
 
 // input_name
