@@ -96,12 +96,12 @@ body {
 .navbar .container {
   position: absolute;
   top: 100%;
-  right: 0%;
+  right: 0;
   margin: 1.5rem;
   background-color: var(--teatransparent);
   border-radius: 0.8rem;
   box-shadow: 1.3px 1.3px 3.9px var(--tea);
-  height: 3.66rem;
+  height: 3.6rem;
   display: flex;
   transform: scaleY(0);
   transform-origin: top;
@@ -129,6 +129,62 @@ body {
   cursor: pointer;
   color: rgb(255, 255, 255);
   background-color: transparent;
+}
+
+/* Shopping-Cart */
+
+.shopping-cart {
+  position: absolute;
+  height: fit-content;
+  width: 35rem;
+  top: 100%;
+  right: -100%;
+  margin: 1.5rem;
+  background-color: var(--teatransparent);
+  box-shadow: 1.3px 1.3px 3.9px var(--tea);
+  border-radius: 0.8rem;
+  padding-top: 0.5rem;
+  transition: 0.3s;
+}
+
+.shopping-cart.active {
+  right: 0;
+}
+
+.shopping-cart .cart-item {
+  position: relative;
+  margin: 1rem;
+  padding: 0 0 0.5rem 0.5rem ;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  border-bottom: 1px dashed rgb(255, 255, 255);
+}
+
+.shopping-cart .cart-item img {
+  margin-bottom: 1rem;
+  border-radius: 0.8rem;
+  max-height: 11rem;
+}
+
+.shopping-cart .cart-item h3 {
+  padding-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.shopping-cart .item-price {
+  padding-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.shopping-cart .remove-item {
+  position: absolute;
+  right: 0.5rem;
+  cursor: pointer;
+}
+
+.shopping-cart .remove-item:hover {
+  color: var(--bg);
 }
 
 /* Hero_Section */
@@ -395,6 +451,7 @@ body {
 .products .product-icon a:hover {
   color: var(--primary);
   background-color: rgb(255, 255, 255);
+  border: 2px solid var(--primary);
 }
 
 .products .product-image {
@@ -554,6 +611,22 @@ footer .credit a:hover {
   color: var(--primary);
   font-size: 1rem;
   font-weight: 600;
+}
+
+footer .gotofooter a {
+  display: flex;
+  position: fixed;
+  margin: 2rem 3rem;
+  right: 0;
+  bottom: 0;
+  z-index: 8888;
+  color: rgb(255, 255, 255);
+}
+
+footer .gotofooter a:hover {
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  color: var(--primary);
 }
 
 /* !WARNING Media_Queries */

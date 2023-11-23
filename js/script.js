@@ -17,15 +17,26 @@ document.querySelector("#search").onclick = (e) => {
   e.preventDefault();
 };
 
+// toggle_class_active_shopping-cart
+const navbarShopping = document.querySelector(".shopping-cart");
+document.querySelector("#shopping-cart-button").onclick = (e) => {
+  navbarShopping.classList.toggle("active");
+  e.preventDefault();
+};
+
 // hide_class_active
 const edgeMenu = document.querySelector("#edge-menu");
 const searchContainer = document.querySelector("#search");
+const shoppingCart = document.querySelector("#shopping-cart-button");
 document.addEventListener("click", function (e) {
   if (!edgeMenu.contains(e.target)) {
     navbarNav.classList.remove("active");
   }
   if (!searchContainer.contains(e.target) && !navbarSearch.contains(e.target)) {
     navbarSearch.classList.remove("active");
+  }
+  if (!shoppingCart.contains(e.target) && !navbarShopping.contains(e.target)) {
+    navbarShopping.classList.remove("active");
   }
 });
 
