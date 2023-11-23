@@ -29,80 +29,32 @@ document.addEventListener("click", function (e) {
   }
 });
 
-// custom_search_engine_API
+// custom_search_engine
 document.addEventListener("DOMContentLoaded", function () {
   const searchForm = document.getElementById("search-form");
 
   searchForm.addEventListener("submit", function (event) {
-    event.preventDefault(); // Mencegah form dari pengiriman default
+    event.preventDefault();
 
     const query = document.getElementById("query").value;
     if (!query) {
-      alert("Please enter a search query");
+      alert("Please fill out the search field.");
       return;
     }
 
-    performSearch(query);
-  });
-});
-
-function performSearch(query) {
-  fetch(`http://localhost:8080/api/search?query=${query}`)
-    .then((response) => response.json())
-    .then((data) => displayResults(data))
-    .catch((error) => console.error("Error fetching search results:", error));
-}
-
-function displayResults(results) {
-  const resultsContainer = document.getElementById("results");
-  resultsContainer.innerHTML = "";
-
-  if (results.length === 0) {
-    resultsContainer.innerHTML = "No results found.";
-    return;
-  }
-
-  const ul = document.createElement("ul");
-  results.forEach((result) => {
-    const li = document.createElement("li");
-    li.textContent = `${result.Title} - ${result.Link}`;
-    ul.appendChild(li);
-  });
-
-  resultsContainer.appendChild(ul);
-}
-
-// Fungsi untuk menampilkan hasil pencarian di halaman web
-function displayResults(results) {
-  const resultsContainer = document.getElementById("search-results");
-  resultsContainer.innerHTML = "";
-
-  if (results.length === 0) {
-    resultsContainer.innerHTML = "No results found.";
-    return;
-  }
-
-  const ul = document.createElement("ul");
-  results.forEach((result) => {
-    const li = document.createElement("li");
-    li.textContent = `${result.Title} - ${result.Link}`;
-    ul.appendChild(li);
-  });
-
-  resultsContainer.appendChild(ul);
-}
-
-// Menangani formulir pencarian saat disubmit
-const searchForm = document.getElementById("search-form");
-searchForm.addEventListener("submit", function (event) {
-  event.preventDefault(); // Mencegah formulir untuk melakukan submit biasa
-  const queryInput = document.getElementById("query");
-  const query = queryInput.value.trim();
-
-  if (query !== "") {
     sendSearchRequest(query);
-  }
+  });
 });
+
+function sendSearchRequest(query) {
+  const cx = "12d8bf80438ff4582";
+
+  const searchUrl = `https://cse.google.com/cse?cx=${cx}#gsc.tab=0&gsc.q=teh solo ${encodeURIComponent(
+    query
+  )}&gsc.sort=`;
+
+  window.open(searchUrl, "_blank");
+}
 
 // input_name
 const inputElement = document.getElementById("name");
