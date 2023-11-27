@@ -1,7 +1,5 @@
 {
-  "go.toolsEnvVars": {
-    "GOPATH": "${workspaceFolder}"
-  },
-  "go.useLanguageServer": true,
-  "go.inferGopath": true
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
+  "githubPullRequests.telemetry.enabled": false
 }
