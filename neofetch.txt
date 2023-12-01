@@ -1,0 +1,20 @@
+           `-/osyhddddhyso/-`              nan@nantunggaputra-web-developer 
+        .+yddddddddddddddddddy+.           ------------------------ 
+      :yddddddddddddddddddddddddy:         OS: Xubuntu 22.04.3 LTS x86_64 
+    -yddddddddddddddddddddhdddddddy-       Host: ABC Z X0X0X0-000000 
+   odddddddddddyshdddddddh`dddd+ydddo      Kernel: 6.2.0-37-generic 
+ `yddddddhshdd-   ydddddd+`ddh.:dddddy`    Uptime: X mins 
+ sddddddy   /d.   :dddddd-:dy`-ddddddds    Packages: 1825 (dpkg), 7 (snap) 
+:ddddddds    /+   .dddddd`yy`:ddddddddd:   Shell: bash 5.1.16 
+sdddddddd`    .    .-:/+ssdyodddddddddds   Resolution: 1366x768 
+ddddddddy                  `:ohddddddddd   DE: Xfce 4.16 
+dddddddd.                      +dddddddd   WM: Xfwm4 
+sddddddy                        ydddddds   WM Theme: Mantis Night 
+:dddddd+                      .oddddddd:   Theme: Mantis Night [GTK2/3] 
+ sdddddo                   ./ydddddddds    Icons: elementary-xfce-darkest [GTK2/3]
+ `yddddd.              `:ohddddddddddy`    Terminal: xfce4-terminal 
+   oddddh/`      `.:+shdddddddddddddo      Terminal Font: Monospace Bold 11 
+    -ydddddhyssyhdddddddddddddddddy-       CPU: Pentium T4400 (2) @ 2.200GHz 
+      :yddddddddddddddddddddddddy:         GPU: Intel Mobile 4 Series Chipset 
+        .+yddddddddddddddddddy+.           Memory: 427MiB / 1829MiB 
+           `-/osyhddddhyso/-`
