@@ -459,31 +459,30 @@ body {
 }
 
 .products .product-image img {
-  border-radius: 00.8rem;
+  border-radius: 0.8rem;
   max-height: 15.5rem;
 }
 
-.products .product-content h3 {
+.products .product-content h3, .modal-content .product-content h3 {
   font-size: 1.35rem;
 }
 
-.products .product-stars {
-  padding: 0.8rem;
+.products .product-stars, .modal-content .product-stars {
+  padding: 0.8rem 0;
   font-size: 1.5rem;
   color: var(--bg);
 }
 
-.products .product-stars .star-full {
+.products .product-stars .star-full, .modal-content .product-stars .star-full {
   fill: var(--bg);
-
 }
 
-.products .product-price {
+.products .product-price, .modal-content .product-price {
   font-size: 1.1rem;
   font-weight: 500;
 }
 
-.products .product-price span {
+.products .product-price span, .modal-content .product-price span {
   text-decoration: line-through;
   font-size: 0.9rem;
   font-weight: 300;
@@ -629,6 +628,98 @@ footer .gotofooter a:hover {
   color: var(--primary);
 }
 
+/* Modal_Box */
+
+/* Item_Detail */
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: var(--teatransparent);
+}
+
+.modal-container {
+  position: relative;
+  margin: 12% auto;
+  padding: 1.2rem;
+  width: 80%;
+  background-color: rgb(42, 42, 42);
+  border-radius: 0.8rem;
+  animation: animateModal 0.5s;
+}
+
+@keyframes animateModal {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.modal-container .close-icon {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.1rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.modal-container .close-icon:hover {
+  color: rgb(255, 255, 255);
+}
+
+.modal-content {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.modal-content img {
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  height: 22rem;
+  border-radius: 0.8rem;
+}
+
+.modal-content h3 span {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.modal-content p {
+  margin: 1.2rem 0;
+  line-height: 1.8rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.modal-content a {
+  display: flex;
+  margin-top: 1rem;
+  padding: 0.8rem 1.6rem;
+  gap: 1rem;
+  width: 13rem;
+  color: rgb(255, 255, 255);
+  background-color: var(--primary);
+  border: 2px solid var(--primary);
+  border-radius: 0.8rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content a:hover {
+  color: var(--primary);
+  background-color: rgb(255, 255, 255);
+  border: 2px solid var(--primary);
+}
+
 /* !WARNING Media_Queries */
 
 /* ?QUESTION Check again is it responsive? */
@@ -697,6 +788,9 @@ footer .gotofooter a:hover {
   }
   .contact .row form {
     padding-top: 0.5rem;
+  }
+  .modal-content {
+    flex-wrap: wrap;
   }
 }
 

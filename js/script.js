@@ -67,6 +67,14 @@ function sendSearchRequest(query) {
   window.open(searchUrl, "_blank");
 }
 
+// eye_box
+const itemDetailModal = document.querySelector("#item-detail-modal");
+const itemDetailButton2 = document.querySelector(".item-detail-button-2");
+itemDetailButton2.onclick = (e) => {
+  itemDetailModal.style.display = "flex";
+  e.preventDefault();
+};
+
 // input_name
 const inputElement = document.getElementById("name");
 inputElement.addEventListener("input", function () {
