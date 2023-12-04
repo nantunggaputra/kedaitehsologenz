@@ -68,10 +68,26 @@ function sendSearchRequest(query) {
 }
 
 // eye_box
-const itemDetailModal = document.querySelector("#item-detail-modal");
+const itemDetailModal2 = document.querySelector("#item-detail-modal-2");
+const itemDetailModal3 = document.querySelector("#item-detail-modal-3");
 const itemDetailButton2 = document.querySelector(".item-detail-button-2");
+const itemDetailButton3 = document.querySelector(".item-detail-button-3");
+const closeIcon2 = document.querySelector(".modal-container .close-icon-2");
+const closeIcon3 = document.querySelector(".modal-container .close-icon-3");
 itemDetailButton2.onclick = (e) => {
-  itemDetailModal.style.display = "flex";
+  itemDetailModal2.style.display = "flex";
+  e.preventDefault();
+};
+itemDetailButton3.onclick = (e) => {
+  itemDetailModal3.style.display = "flex";
+  e.preventDefault();
+};
+closeIcon2.onclick = (e) => {
+  itemDetailModal2.style.display = "none";
+  e.preventDefault();
+};
+closeIcon3.onclick = (e) => {
+  itemDetailModal3.style.display = "none";
   e.preventDefault();
 };
 

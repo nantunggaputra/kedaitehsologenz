@@ -632,7 +632,7 @@ footer .gotofooter a:hover {
 
 /* Item_Detail */
 
-.modal {
+.modal-2, .modal-3 {
   display: none;
   position: fixed;
   top: 0;
@@ -646,7 +646,7 @@ footer .gotofooter a:hover {
 
 .modal-container {
   position: relative;
-  margin: 12% auto;
+  margin: 12.75% auto;
   padding: 1.2rem;
   width: 80%;
   background-color: rgb(42, 42, 42);
@@ -665,14 +665,14 @@ footer .gotofooter a:hover {
   }
 }
 
-.modal-container .close-icon {
+.modal-container .close-icon-2, .modal-container .close-icon-3 {
   position: absolute;
   top: 1.1rem;
   right: 1.1rem;
   color: rgba(255, 255, 255, 0.5);
 }
 
-.modal-container .close-icon:hover {
+.modal-container .close-icon-2:hover, .modal-container .close-icon-3:hover {
   color: rgb(255, 255, 255);
 }
 
@@ -684,7 +684,7 @@ footer .gotofooter a:hover {
 .modal-content img {
   margin-right: 2rem;
   margin-bottom: 2rem;
-  height: 22rem;
+  height: 21rem;
   border-radius: 0.8rem;
 }
 
