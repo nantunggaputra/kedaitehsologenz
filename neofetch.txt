@@ -1,10 +1,10 @@
-           `-/osyhddddhyso/-`              nan@nantunggaputra-web-developer 
+           `-/osyhddddhyso/-`              nan@nantungga-putra-web-dev 
         .+yddddddddddddddddddy+.           ------------------------ 
       :yddddddddddddddddddddddddy:         OS: Xubuntu 22.04.3 LTS x86_64 
     -yddddddddddddddddddddhdddddddy-       Host: ABC Z X0X0X0-000000 
-   odddddddddddyshdddddddh`dddd+ydddo      Kernel: 6.2.0-37-generic 
+   odddddddddddyshdddddddh`dddd+ydddo      Kernel: 6.2.0-39-generic 
  `yddddddhshdd-   ydddddd+`ddh.:dddddy`    Uptime: X mins 
- sddddddy   /d.   :dddddd-:dy`-ddddddds    Packages: 1856 (dpkg), 11 (snap) 
+ sddddddy   /d.   :dddddd-:dy`-ddddddds    Packages: 1862 (dpkg), 11 (snap) 
 :ddddddds    /+   .dddddd`yy`:ddddddddd:   Shell: bash 5.1.16 
 sdddddddd`    .    .-:/+ssdyodddddddddds   Resolution: 1366x768 
 ddddddddy                  `:ohddddddddd   DE: Xfce 4.16 
