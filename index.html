@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,11 +13,12 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,700&display=swap" rel="stylesheet">
 
     <!-- Feather_Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.1/feather.min.js" integrity="sha512-4lykFR6C2W55I60sYddEGjieC2fU79R7GUtaqr3DzmNbo0vSaO1MfUjMoTFYYuedjfEix6uV9jVTtRCSBU/Xiw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- My_Style -->
     <link rel="stylesheet" href="css/style.css">
@@ -43,9 +45,9 @@
         <!-- Search_Form -->
         <div class="container">
             <form id="search-form">
-            <label for="query"></label>
-            <input type="search" placeholder="Search by Google" id="query" name="query" required>
-            <button type="submit">Search</button>
+                <label for="query"></label>
+                <input type="search" placeholder="Search by Google" id="query" name="query" required>
+                <button type="submit">Search</button>
             </form>
         </div>
         <!-- Search_Form -->
@@ -70,7 +72,7 @@
             </div>
         </div>
         <!-- Shopping_Cart_Start -->
-        
+
     </nav>
     <!-- Navbar_End -->
 
@@ -87,18 +89,18 @@
     <!-- About_Section_Start -->
     <section id="about" class="about">
         <h2><strong>Tentang <span>Kami</span></strong></h2>
-    <div class="row">
-        <div class="about-img">
-            <img src="img/about.png" alt="Tentang Kami">
+        <div class="row">
+            <div class="about-img">
+                <img src="img/about.png" alt="Tentang Kami">
+            </div>
+            <div class="content">
+                <h3>Kenapa Nak Gen-Z Lebih Memilih Es Teh Kami?</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis inventore cum debitis adipisci tenetur totam repudiandae iusto saepe. Obcaecati ipsa sapiente cumque quos fuga est id placeat illo incidunt corporis.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, voluptatem quia sequi expedita sed ipsa ut pariatur totam quidem sapiente voluptate architecto, recusandae itaque repudiandae eveniet esse nemo perspiciatis! Rem.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis ea eveniet non repudiandae officiis eos ducimus dolore! Sit adipisci ducimus eligendi blanditiis sed illum voluptates sequi esse natus, mollitia hic.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
         </div>
-        <div class="content">
-            <h3>Kenapa Nak Gen-Z Lebih Memilih Es Teh Kami?</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis inventore cum debitis adipisci tenetur totam repudiandae iusto saepe. Obcaecati ipsa sapiente cumque quos fuga est id placeat illo incidunt corporis.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, voluptatem quia sequi expedita sed ipsa ut pariatur totam quidem sapiente voluptate architecto, recusandae itaque repudiandae eveniet esse nemo perspiciatis! Rem.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis ea eveniet non repudiandae officiis eos ducimus dolore! Sit adipisci ducimus eligendi blanditiis sed illum voluptates sequi esse natus, mollitia hic.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
-    </div>
     </section>
     <!-- About_Section_End -->
 
@@ -220,22 +222,23 @@
             <form action="">
                 <div class="input-group">
                     <i data-feather="user"></i>
-                    <input type="text" id="name" placeholder="Nama">
+                    <input type="text" id="name" placeholder="Nama" required>
                 </div>
                 <div class="input-group">
                     <i data-feather="mail"></i>
-                    <input type="email" id="email" placeholder="E-mail Kamu">
+                    <input type="email" id="email" placeholder="E-mail Kamu" required>
                 </div>
                 <div class="input-group">
                     <i data-feather="phone"></i>
-                    <input type="text" id="phone" placeholder="No. Handphone">
+                    <input type="text" id="phone" placeholder="No. Handphone" required>
                 </div>
                 <div class="input-group">
                     <i data-feather="message-circle"></i>
-                    <textarea name="message" id="message" rows="3"></textarea>
+                    <textarea name="message" id="message" rows="3" required></textarea>
                 </div>
                 <div>
-                    <button type="submit" class="btn">Kirim Pesan</button>
+                    <!-- <button type="submit" class="btn">Kirim Pesan</button> -->
+                    <button type="reset" class="btn">Kirim Pesan</button>
                 </div>
             </form>
         </div>
@@ -262,14 +265,14 @@
             <a href="#contact">Contact</a>
         </div>
         <div class="credit" id="bottom">
-            <p>Created by <a href="https://id.linkedin.com/in/nantungga-putra-451779116">Nantungga Putra</a> | &copy;2023</p>
+            <p>Created by <a href="https://id.linkedin.com/in/nantungga-putra-451779116" target="_blank">Nantungga Putra</a> | &copy;2023</p>
         </div>
         <div class="gotofooter">
             <a href="#bottom"><i data-feather="arrow-down-circle"></i></a>
         </div>
     </footer>
     <!-- Footer_Section_End -->
-    
+
     <!-- Modal_Box_Item_Detail_Start -->
     <div class="modal-2" id="item-detail-modal-2">
         <div class="modal-container">
@@ -314,7 +317,7 @@
         </div>
     </div>
     <!-- Modal_Box_Item_Detail_End -->
-    
+
     <!-- Feather_Icons -->
     <script>
         feather.replace();
@@ -322,5 +325,7 @@
 
     <!-- My_JavaScript -->
     <script src="js/script.js"></script>
+
 </body>
+
 </html>

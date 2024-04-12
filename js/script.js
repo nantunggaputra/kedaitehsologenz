@@ -43,28 +43,51 @@ document.addEventListener("click", function (e) {
 // custom_search_engine
 document.addEventListener("DOMContentLoaded", function () {
   const searchForm = document.getElementById("search-form");
-
   searchForm.addEventListener("submit", function (event) {
     event.preventDefault();
-
-    const query = document.getElementById("query").value;
-    if (!query) {
-      alert("Please fill out the search field.");
+    if (typeof Storage !== "undefined") {
+      if (
+        localStorage.getItem("lastSearchTime") &&
+        localStorage.getItem("searchCount")
+      ) {
+        let lastSearchTime = new Date(localStorage.getItem("lastSearchTime"));
+        let currentTime = new Date();
+        let timeDiff = currentTime - lastSearchTime;
+        let hoursDiff = Math.floor(
+          (timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        if (hoursDiff >= 24) {
+          localStorage.setItem("searchCount", 1);
+          localStorage.setItem("lastSearchTime", currentTime);
+        } else {
+          let searchCount = Number(localStorage.getItem("searchCount"));
+          if (searchCount >= 3) {
+            return;
+          } else {
+            localStorage.setItem("searchCount", searchCount + 1);
+          }
+        }
+      } else {
+        let currentTime = new Date();
+        localStorage.setItem("lastSearchTime", currentTime);
+        localStorage.setItem("searchCount", 1);
+      }
+    } else {
       return;
     }
-
+    const query = document.getElementById("query").value;
+    if (!query) {
+      return;
+    }
     sendSearchRequest(query);
   });
 });
-
 function sendSearchRequest(query) {
   const cx = "12d8bf80438ff4582";
-
   const searchUrl = `https://cse.google.com/cse?cx=${cx}#gsc.tab=0&gsc.q=teh solo ${encodeURIComponent(
     query
   )}&gsc.sort=`;
-
-  window.open(searchUrl, "_blank");
+  window.location.href = searchUrl;
 }
 
 // eye_box

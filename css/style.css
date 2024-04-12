@@ -121,7 +121,7 @@ body {
   margin-left: 0.5rem;
   width: 25rem;
   color: rgb(255, 255, 255);
-  background-color: transparent; 
+  background-color: transparent;
 }
 
 .navbar .container button {
@@ -154,7 +154,7 @@ body {
 .shopping-cart .cart-item {
   position: relative;
   margin: 1rem;
-  padding: 0 0 0.5rem 0.5rem ;
+  padding: 0 0 0.5rem 0.5rem;
   display: flex;
   align-items: center;
   gap: 1.5rem;
@@ -318,11 +318,13 @@ body {
 
 /* Menu_Section */
 
-.menu, .products {
+.menu,
+.products {
   padding: 12rem 7% 1.4rem;
 }
 
-.menu h2, .products h2 {
+.menu h2,
+.products h2 {
   text-align: center;
   font-size: 1.8rem;
   margin-bottom: 3rem;
@@ -330,11 +332,13 @@ body {
   box-shadow: 1.3px 1.3px 3.9px var(--tea);
 }
 
-.menu h2 span, .products h2 span {
+.menu h2 span,
+.products h2 span {
   color: var(--primary);
 }
 
-.menu-all, .products-all {
+.menu-all,
+.products-all {
   display: flex;
   flex: 1 1 65rem;
   padding: 0 1rem;
@@ -463,26 +467,31 @@ body {
   max-height: 15.5rem;
 }
 
-.products .product-content h3, .modal-content .product-content h3 {
+.products .product-content h3,
+.modal-content .product-content h3 {
   font-size: 1.35rem;
 }
 
-.products .product-stars, .modal-content .product-stars {
+.products .product-stars,
+.modal-content .product-stars {
   padding: 0.8rem 0;
   font-size: 1.5rem;
   color: var(--bg);
 }
 
-.products .product-stars .star-full, .modal-content .product-stars .star-full {
+.products .product-stars .star-full,
+.modal-content .product-stars .star-full {
   fill: var(--bg);
 }
 
-.products .product-price, .modal-content .product-price {
+.products .product-price,
+.modal-content .product-price {
   font-size: 1.1rem;
   font-weight: 500;
 }
 
-.products .product-price span, .modal-content .product-price span {
+.products .product-price span,
+.modal-content .product-price span {
   text-decoration: line-through;
   font-size: 0.9rem;
   font-weight: 300;
@@ -547,7 +556,8 @@ body {
   border-radius: 0.8rem;
 }
 
-.contact .row form .input-group input, .contact .row form .input-group textarea {
+.contact .row form .input-group input,
+.contact .row form .input-group textarea {
   width: 100%;
   padding: 0.5rem 2rem;
   color: rgb(255, 255, 255);
@@ -591,7 +601,8 @@ footer .social a:hover {
   color: rgb(42, 42, 42);
 }
 
-footer .links a, footer .links p {
+footer .links a,
+footer .links p {
   display: inline;
   margin: 3rem 0.5rem;
   color: var(--primary);
@@ -599,7 +610,8 @@ footer .links a, footer .links p {
   font-weight: 600;
 }
 
-footer .credit a, footer .credit p {
+footer .credit a,
+footer .credit p {
   margin: 4rem 0.5rem 1rem 0.5rem;
   color: var(--primary);
   font-size: 0.7rem;
@@ -632,7 +644,8 @@ footer .gotofooter a:hover {
 
 /* Item_Detail */
 
-.modal-2, .modal-3 {
+.modal-2,
+.modal-3 {
   display: none;
   position: fixed;
   top: 0;
@@ -640,7 +653,7 @@ footer .gotofooter a:hover {
   z-index: 9999;
   width: 100%;
   height: 100%;
-  overflow: auto;
+  overflow: hidden;
   background-color: var(--teatransparent);
 }
 
@@ -649,6 +662,7 @@ footer .gotofooter a:hover {
   margin: 12.75% auto;
   padding: 1.2rem;
   width: 80%;
+  height: fit-content;
   background-color: rgb(42, 42, 42);
   border-radius: 0.8rem;
   animation: animateModal 0.5s;
@@ -665,14 +679,16 @@ footer .gotofooter a:hover {
   }
 }
 
-.modal-container .close-icon-2, .modal-container .close-icon-3 {
+.modal-container .close-icon-2,
+.modal-container .close-icon-3 {
   position: absolute;
   top: 1.1rem;
   right: 1.1rem;
   color: rgba(255, 255, 255, 0.5);
 }
 
-.modal-container .close-icon-2:hover, .modal-container .close-icon-3:hover {
+.modal-container .close-icon-2:hover,
+.modal-container .close-icon-3:hover {
   color: rgb(255, 255, 255);
 }
 
