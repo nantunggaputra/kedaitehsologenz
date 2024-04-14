@@ -45,38 +45,46 @@ document.addEventListener("DOMContentLoaded", function () {
   const searchForm = document.getElementById("search-form");
   searchForm.addEventListener("submit", function (event) {
     event.preventDefault();
-    if (typeof Storage !== "undefined") {
-      if (
-        localStorage.getItem("lastSearchTime") &&
-        localStorage.getItem("searchCount")
-      ) {
-        let lastSearchTime = new Date(localStorage.getItem("lastSearchTime"));
-        let currentTime = new Date();
-        let timeDiff = currentTime - lastSearchTime;
-        let hoursDiff = Math.floor(
-          (timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-        );
-        if (hoursDiff >= 24) {
-          localStorage.setItem("searchCount", 1);
-          localStorage.setItem("lastSearchTime", currentTime);
-        } else {
-          let searchCount = Number(localStorage.getItem("searchCount"));
-          if (searchCount >= 3) {
-            return;
-          } else {
-            localStorage.setItem("searchCount", searchCount + 1);
-          }
-        }
+    let searchCount = 0;
+    let lastSearchTime = 0;
+    try {
+      if (typeof Storage !== "undefined") {
+        lastSearchTime = parseInt(localStorage.getItem("lastSearchTime")) || 0;
+        searchCount = parseInt(localStorage.getItem("searchCount")) || 0;
+      }
+    } catch (error) {
+      console.error("An error occurred while accessing web storage:", error);
+    }
+    const currentTime = Date.now();
+    if (lastSearchTime) {
+      let timeDiff = currentTime - lastSearchTime;
+      let hoursDiff = Math.floor(timeDiff / (1000 * 60 * 60));
+      if (hoursDiff >= 24) {
+        searchCount = 1;
+        lastSearchTime = currentTime;
       } else {
-        let currentTime = new Date();
-        localStorage.setItem("lastSearchTime", currentTime);
-        localStorage.setItem("searchCount", 1);
+        if (searchCount >= 10) {
+          console.log("You have exceeded the search query limit.");
+          return;
+        } else {
+          searchCount++;
+        }
       }
     } else {
-      return;
+      lastSearchTime = currentTime;
+      searchCount = 1;
+    }
+    try {
+      if (typeof Storage !== "undefined") {
+        localStorage.setItem("lastSearchTime", lastSearchTime.toString());
+        localStorage.setItem("searchCount", searchCount.toString());
+      }
+    } catch (error) {
+      console.error("An error occurred while accessing web storage:", error);
     }
     const query = document.getElementById("query").value;
     if (!query) {
+      alert("Please enter a search query.");
       return;
     }
     sendSearchRequest(query);
