@@ -41,6 +41,8 @@ document.addEventListener("click", function (e) {
 });
 
 // custom_search_engine
+// this cse url has been disabled
+// please use your own cse url
 document.addEventListener("DOMContentLoaded", function () {
   const searchForm = document.getElementById("search-form");
   searchForm.addEventListener("submit", function (event) {
